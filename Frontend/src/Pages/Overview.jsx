@@ -12,7 +12,6 @@ const Overview = () => {
   const data = useSelector((state) => state.tours.allTours);
   const fetchData = async () => {
     const res = await fetch(`${import.meta.env.VITE_BASE_URL}/tours`, {
-
       headers: { Authorization: `Bearer ${import.meta.env.VITE_JWT_TOKEN}` },
     });
 
@@ -21,7 +20,7 @@ const Overview = () => {
     dispatch(getAllTours(tourData));
   };
   useEffect(() => {
-    if (data.length == 0) {
+    if (data?.length == 0) {
       fetchData();
     }
   }, [dispatch, data]);
