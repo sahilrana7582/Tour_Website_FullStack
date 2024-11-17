@@ -1,13 +1,11 @@
 import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import { Route, Routes } from 'react-router-dom';
 import Overview from './Pages/Overview';
 import Layout from './layout/Layout';
-import Home from './pages/Home';
 import TourDetail from './Pages/TourDetail';
 import Auth from './Pages/Auth';
 import { Profile } from './Pages/Profile';
+import Home from './Pages/Home';
 
 function App() {
   const [count, setCount] = useState(0);
