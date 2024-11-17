@@ -12,6 +12,8 @@ const Overview = () => {
   const data = useSelector((state) => state.tours.allTours);
   const fetchData = async () => {
     const res = await fetch(`${import.meta.env.VITE_BASE_URL}/tours`, {
+      mode: 'no-cors',
+
       headers: { Authorization: jwtTojen },
     });
 

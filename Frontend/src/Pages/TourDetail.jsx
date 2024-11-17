@@ -25,6 +25,7 @@ const TourDetail = () => {
     const api = await fetch(
       `${import.meta.env.VITE_BASE_URL}/tours/${params.id}`,
       {
+        mode: 'no-cors',
         headers: {
           Authorization: jwtTojen,
         },

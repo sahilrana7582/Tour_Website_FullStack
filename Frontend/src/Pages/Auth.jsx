@@ -30,6 +30,7 @@ export default function Auth() {
           `${import.meta.env.VITE_BASE_URL}/users/login`,
           {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
               'content-type': 'application/json',
             },
@@ -60,6 +61,7 @@ export default function Auth() {
           `${import.meta.env.VITE_BASE_URL}/users/signup`,
           {
             method: 'POST',
+            mode: 'no-cors',
             headers: {
               'content-type': 'application/json',
             },
