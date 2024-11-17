@@ -26,13 +26,16 @@ export default function Auth() {
   const onSubmit = async (data) => {
     if (loggedIn) {
       try {
-        const apiRes = await fetch(`${baseURL}/users/login`, {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        });
+        const apiRes = await fetch(
+          `${import.meta.env.VITE_BASE_URL}/users/login`,
+          {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(data),
+          }
+        );
 
         const result = await apiRes.json();
         if (result?.status === 'success') {
@@ -53,13 +56,16 @@ export default function Auth() {
       try {
         const body = { ...data, passwordConfirm: data.password };
         console.log(body);
-        const apiRes = await fetch(`${baseURL}/users/signup`, {
-          method: 'POST',
-          headers: {
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(body),
-        });
+        const apiRes = await fetch(
+          `${import.meta.env.VITE_BASE_URL}/users/signup`,
+          {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(body),
+          }
+        );
         const result = await apiRes.json();
         toast('Account Created Successfully');
         setLoggedIn(!loggedIn);

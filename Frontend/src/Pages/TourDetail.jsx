@@ -22,11 +22,14 @@ const TourDetail = () => {
   console.log(data);
 
   const fetchData = async () => {
-    const api = await fetch(`${baseURL}/tours/${params.id}`, {
-      headers: {
-        Authorization: jwtTojen,
-      },
-    });
+    const api = await fetch(
+      `${import.meta.env.VITE_BASE_URL}/tours/${params.id}`,
+      {
+        headers: {
+          Authorization: jwtTojen,
+        },
+      }
+    );
 
     const res = await api.json();
     dispatch(setOneTour(res?.data?.data));

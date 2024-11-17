@@ -11,7 +11,7 @@ const Overview = () => {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.tours.allTours);
   const fetchData = async () => {
-    const res = await fetch(`${baseURL}/tours`, {
+    const res = await fetch(`${import.meta.env.VITE_BASE_URL}/tours`, {
       headers: { Authorization: jwtTojen },
     });
 
